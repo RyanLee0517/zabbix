@@ -195,7 +195,7 @@ sudo ufw allow proto tcp from 10.10.100.162 to any port 9115
 sudo ufw enable
 
 # Change Password user
-sudo passwd user <<EOF
+sudo passwd ryanserver <<EOF
 Huyle123@
 Huyle123@
 EOF
