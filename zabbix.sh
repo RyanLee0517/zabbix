@@ -16,7 +16,7 @@ hostnamectl set-hostname zabbix
 # Statics Ip set up
 sed -i '5d' /etc/netplan/00-installer-config.yaml
 sed -i '5 i \      addresses:' /etc/netplan/00-installer-config.yaml
-sed -i '6 i \      - 192.168.100.10/24' /etc/netplan/00-installer-config.yaml
+sed -i '6 i \      - 10.254.100.10/24' /etc/netplan/00-installer-config.yaml
 sed -i '7 i \      gateway4: 192.168.100.1' /etc/netplan/00-installer-config.yaml
 sed -i '8 i \      nameservers:' /etc/netplan/00-installer-config.yaml
 sed -i '9 i \        addresses:' /etc/netplan/00-installer-config.yaml
