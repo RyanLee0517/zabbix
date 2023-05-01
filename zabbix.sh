@@ -10,19 +10,19 @@ timedatectl set-ntp 1
 # Change hostname and add Domain
 sed -i '2d' /etc/hosts
 sed -i '3 i 127.0.1.1       zabbix.ambsoft.local' /etc/hosts
-sed -i '4 i 192.168.100.10   zabbix.ambsoft.local' /etc/hosts
+sed -i '4 i 172.16.100.10   zabbix.ambsoft.local' /etc/hosts
 hostnamectl set-hostname zabbix
 
 # Statics Ip set up
 sed -i '5d' /etc/netplan/00-installer-config.yaml
 sed -i '5 i \      addresses:' /etc/netplan/00-installer-config.yaml
-sed -i '6 i \      - 10.254.100.10/24' /etc/netplan/00-installer-config.yaml
-sed -i '7 i \      gateway4: 192.168.100.1' /etc/netplan/00-installer-config.yaml
+sed -i '6 i \      - 172.16.100.10/24' /etc/netplan/00-installer-config.yaml
+sed -i '7 i \      gateway4: 172.16.100.1' /etc/netplan/00-installer-config.yaml
 sed -i '8 i \      nameservers:' /etc/netplan/00-installer-config.yaml
 sed -i '9 i \        addresses:' /etc/netplan/00-installer-config.yaml
 sed -i '10 i \        - 8.8.8.8' /etc/netplan/00-installer-config.yaml
-sed -i '11 i \        - 192.168.100.100' /etc/netplan/00-installer-config.yaml
-sed -i '12 i \        - 192.168.100.110' /etc/netplan/00-installer-config.yaml
+sed -i '11 i \        - 172.16.100.100' /etc/netplan/00-installer-config.yaml
+sed -i '12 i \        - 172.16.100.110' /etc/netplan/00-installer-config.yaml
 
 sudo netplan apply
 
